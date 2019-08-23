@@ -1,11 +1,10 @@
 package com.stillcoolme.remote
 
 import akka.actor.{ActorSystem, Props}
-import com.typesafe.config.ConfigFactory
 import akka.util.Timeout
+import com.typesafe.config.ConfigFactory
 
 import scala.concurrent.Await
-import scala.concurrent.duration._
 
 /**
   * @author: stillcoolme

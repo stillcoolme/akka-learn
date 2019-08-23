@@ -1,7 +1,8 @@
 package com.stillcoolme.remote
 
 import akka.actor.{ActorSystem, Props}
-import akka.testkit.{EventFilter, ImplicitSender, TestActorRef, TestKit, TestProbe}
+import akka.testkit.{ImplicitSender, TestActorRef, TestKit, TestProbe}
+import com.stillcoolme.local.TeacherActor
 import com.typesafe.config.ConfigFactory
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
