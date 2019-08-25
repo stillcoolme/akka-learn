@@ -18,7 +18,7 @@ object RemoteApp {
     student ! 7.toLong
     Thread.sleep(1000)
 
-    actorSystem.shutdown()
+    // actorSystem.shutdown()
   }
 
 }
