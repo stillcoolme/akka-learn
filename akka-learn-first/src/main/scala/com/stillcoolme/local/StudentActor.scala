@@ -26,16 +26,18 @@ class StudentActor extends Actor{
   }
 }
 
+// 伴生对象
 object StudentSimulator extends App{
   //读入客户端配置
   val config = ConfigFactory
     .parseResources("lietal.conf")
     .getConfig("RemoteClientSideActor")
 
-  //使用配置，建立 ActorSystem
+  //使用配置，建立 ActorSystem，负责创建和监控下面的Actor，他是单例的
   val actorSystem = ActorSystem("StudentClient", config)
   // 获得 StudentActor 的一个引用。
   // 在程序中 Actor 不能直接被访问，所有操作都必须通过 ActorRef 引用。
+  // StudentActor 类放到Props里面，StudentActor 主构造器会执行
   val studentActor = actorSystem.actorOf(Props[StudentActor])
   while(true) {
     studentActor ! 7.toLong
